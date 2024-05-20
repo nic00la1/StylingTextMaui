@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StylingTextMaui.MainPage"
+             BackgroundColor="White">
+
+    <VerticalStackLayout>
+        <Label Text="Stylowanie elementu"
+               FontSize="Large"
+               BackgroundColor="#558B2F"
+               TextColor="Black"/>
+
+        <Label Text="Rozmiar: "
+               TextColor="Black"
+               FontSize="18" Margin="20,0,20,0"/>
+
+        <Slider Maximum="360"
+                ValueChanged="Slider_ValueChanged"
+                Margin="20,16,20,0"/>
+
+        <Label Text="Pozycja tekstu"
+               TextColor="Black"
+               FontSize="18"
+               Margin="20,0,20,0"/>
+
+        <Picker x:Name="picker"
+                BackgroundColor="#558B2F"
+                Margin="20,0,20,0">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>End</x:String>
+                    <x:String>Center</x:String>
+                    <x:String>Start</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Pogrubiony tekst?"
+               FontSize="18" Margin="20"/>
+        <Switch Toggled="Switch_Toggled"/>
+
+        <Label Text="Kursywa?"
+               FontSize="18"
+               Margin="20"/>
+        <Switch Toggled="Switch_Toggled_1"/>
+
+        <Button Text="Zatwierdź ustawienia"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                Margin="20"/>
+
+        <BoxView HeightRequest="1" Color="Green"
+                 Margin="20"/>
+
+        <Label Text="Witaj świecie!"/>
+
+    </VerticalStackLayout>
+</ContentPage>
