@@ -12,9 +12,10 @@
 
         <Label Text="Rozmiar: "
                TextColor="Black"
-               FontSize="18" Margin="20,0,20,0"/>
+               FontSize="18" Margin="20,0,20,0"
+               x:Name="sizeLabel"/>
 
-        <Slider Maximum="360"
+        <Slider x:Name="slider" Maximum="48" Minimum="12"
                 ValueChanged="Slider_ValueChanged"
                 Margin="20,16,20,0"/>
 
@@ -25,7 +26,7 @@
 
         <Picker x:Name="picker"
                 BackgroundColor="#558B2F"
-                Margin="20,0,20,0">
+                Margin="20,0,20,0" SelectedIndex="0" FontSize="18">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>End</x:String>
@@ -36,23 +37,30 @@
         </Picker>
 
         <Label Text="Pogrubiony tekst?"
-               FontSize="18" Margin="20"/>
-        <Switch Toggled="Switch_Toggled"/>
+               FontSize="18" Margin="20"
+               TextColor="Black"/>
+        <Switch x:Name="boldSwitch"
+                BackgroundColor="Black"/>
 
         <Label Text="Kursywa?"
                FontSize="18"
-               Margin="20"/>
-        <Switch Toggled="Switch_Toggled_1"/>
+               Margin="20"
+               TextColor="Black"/>
+        
+        <Switch x:Name="italicSwitch"
+                BackgroundColor="Black"/>
 
         <Button Text="Zatwierdź ustawienia"
                 VerticalOptions="Center"
                 FontAttributes="Bold"
-                Margin="20"/>
+                Margin="20"
+                x:Name="button"
+                Clicked="button_Clicked"/>
 
-        <BoxView HeightRequest="1" Color="Green"
+        <BoxView HeightRequest="2" Color="Green"
                  Margin="20"/>
 
-        <Label Text="Witaj świecie!"/>
+        <Label x:Name="quoteLabel" TextColor="Black" HorizontalOptions="Center"/>
 
     </VerticalStackLayout>
 </ContentPage>
