@@ -8,11 +8,17 @@
         <Label Text="Stylowanie elementu"
                FontSize="Large"
                BackgroundColor="#558B2F"
-               TextColor="Black"/>
+               TextColor="Black"
+               Padding="20">
+            <Label.Shadow>
+                <Shadow Brush="Yellow"
+                        Radius="6"/>
+            </Label.Shadow>
+        </Label>
 
         <Label Text="Rozmiar: "
                TextColor="Black"
-               FontSize="18" Margin="20,0,20,0"
+               FontSize="18" Margin="20,20,20,-20"
                x:Name="sizeLabel"/>
 
         <Slider x:Name="slider" Maximum="48" Minimum="12"
@@ -58,9 +64,18 @@
                 Clicked="button_Clicked"/>
 
         <BoxView HeightRequest="2" Color="Green"
-                 Margin="20"/>
+                 Margin="20">
+            <BoxView.Shadow>
+                <Shadow Brush="Green"/>
+            </BoxView.Shadow>
+        </BoxView>
 
-        <Label x:Name="quoteLabel" TextColor="Black" HorizontalOptions="Center"/>
+        <Label x:Name="quoteLabel" TextColor="Black" HorizontalOptions="Center">
+            <Label.Shadow>
+                <Shadow Brush="Yellow"
+                        Radius="6"/>
+            </Label.Shadow>
+        </Label>
 
     </VerticalStackLayout>
 </ContentPage>

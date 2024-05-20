@@ -14,14 +14,15 @@
 
         void Slider_ValueChanged(object? sender, ValueChangedEventArgs e)
         {
-            sizeLabel.Text = "Rozmiar: " + e.NewValue;
+            double roundedValue = Math.Round(e.NewValue);
+            sizeLabel.Text = "Rozmiar: " + roundedValue;
         }
 
         void button_Clicked(object? sender, EventArgs e)
         {
             int index = random.Next(quotes.Length);
             quoteLabel.Text = quotes[index];
-            quoteLabel.FontSize = slider.Value;
+            quoteLabel.FontSize = Math.Round(slider.Value);
             if (picker.SelectedItem != null)
             {
                 string selectedItem = picker.SelectedItem.ToString();
