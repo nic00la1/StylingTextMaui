@@ -2,7 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
-        string[] quotes = new string[5] { "Cytat 1", "Cytat 2", "Cytat 3", "Cytat 4", "Cytat 5" };
+        string[] quotes = new string[5] { "Dzień Dobry!", "Buenos días!", "Bonjour!", "Good morning!", "Guten Tag!" };
         Random random = new Random();
 
         public MainPage()
@@ -24,7 +24,21 @@
             quoteLabel.FontSize = slider.Value;
             if (picker.SelectedItem != null)
             {
-                quoteLabel.HorizontalOptions = (LayoutOptions)Enum.Parse(typeof(LayoutOptions), picker.SelectedItem.ToString());
+                string selectedItem = picker.SelectedItem.ToString();
+                switch (selectedItem)
+                {
+                    case "End":
+                        quoteLabel.HorizontalOptions = LayoutOptions.End;
+                        break;
+                    case "Center":
+                        quoteLabel.HorizontalOptions = LayoutOptions.Center;
+                        break;
+                    case "Start":
+                        quoteLabel.HorizontalOptions = LayoutOptions.Start;
+                        break;
+                    default:
+                        throw new ArgumentException($"Nieznana opcja: {selectedItem}");
+                }
             }
             quoteLabel.FontAttributes = (boldSwitch.IsToggled ? FontAttributes.Bold : FontAttributes.None) | (italicSwitch.IsToggled ? FontAttributes.Italic : FontAttributes.None);
         }
