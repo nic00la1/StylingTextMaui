@@ -4,15 +4,25 @@
              x:Class="StylingTextMaui.MainPage"
              BackgroundColor="White">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="GreenGradient" EndPoint="1,0">
+                <GradientStop Color="#558b2f"
+                          Offset="1.0" />
+                <GradientStop Color="#2c441b"
+                          Offset="0.1" />
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <VerticalStackLayout>
         <Label Text="Stylowanie elementu"
                FontSize="Large"
-               BackgroundColor="#558B2F"
-               TextColor="Black"
+               Background="{StaticResource GreenGradient}"
+               TextColor="White"
                Padding="20">
             <Label.Shadow>
-                <Shadow Brush="Yellow"
-                        Radius="6"/>
+                <Shadow Brush="Black"/>
             </Label.Shadow>
         </Label>
 
@@ -67,7 +77,10 @@
                 FontAttributes="Bold"
                 Margin="20"
                 x:Name="button"
-                Clicked="button_Clicked"/>
+                Clicked="button_Clicked"
+                TextColor="White"
+                Background="{StaticResource GreenGradient}">
+        </Button>
 
         <BoxView HeightRequest="2" Color="Green"
                  Margin="20">
