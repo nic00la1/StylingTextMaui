@@ -10,6 +10,11 @@
             InitializeComponent();
             slider.ValueChanged += Slider_ValueChanged;
             button.Clicked += button_Clicked;
+
+            // Shadow options
+            radiusEntry.TextChanged += RadiusEntry_TextChanged;
+            colorEntry.TextChanged += ColorEntry_TextChanged;
+
         }
 
         void Slider_ValueChanged(object? sender, ValueChangedEventArgs e)
@@ -47,6 +52,39 @@
 
             quoteLabel.TextDecorations = 
                 (underlineSwitch.IsToggled ? TextDecorations.Underline : TextDecorations.None);
+
+            RadiusEntry_TextChanged(null, new TextChangedEventArgs(quoteLabel.Text, radiusEntry.Text));
+            ColorEntry_TextChanged(null, new TextChangedEventArgs(quoteLabel.Text, colorEntry.Text));
+        }
+
+        private void RadiusEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Jeśli wprowadzona wartość jest liczbą, to ustawiamy cień
+            if (double.TryParse(e.NewTextValue, out double radius))
+            {
+                quoteLabel.Shadow = new Shadow() 
+                {
+                    Radius = (float)radius, Brush = new SolidColorBrush(Color.FromHex("#558B2F")) 
+                };
+            }
+            else
+            {
+                Console.WriteLine("Nie ma takiej wartosci cienia!");
+            }
+        }
+        private void ColorEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Color.TryParse(e.NewTextValue, out Color color))
+            {
+                quoteLabel.Shadow = new Shadow()
+                {
+                    Radius = 10, Brush = new SolidColorBrush(color) 
+                };
+            }
+            else
+            {
+                Console.WriteLine("Nie ma takiego koloru!");
+            }
         }
     }
 

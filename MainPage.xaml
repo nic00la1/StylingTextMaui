@@ -127,7 +127,7 @@
                     Stroke="#558B2F"
                     >
 
-                <Entry x:Name="shadowEntry" 
+                <Entry x:Name="radiusEntry" 
                        Placeholder="np. 2,2"
                        FontSize="18"
                        TextColor="Black"
@@ -154,10 +154,12 @@
         >
 
                 <Entry x:Name="colorEntry" 
-                       Placeholder="np. biały"
+                       Placeholder="np. Red"
                        FontSize="18"
                        TextColor="Black"
-                       FontAttributes="Bold">
+                       FontAttributes="Bold"
+                       Text="Green"
+                       >
                     <Entry.Shadow>
                         <Shadow Brush="#558B2F"/>
                     </Entry.Shadow>
