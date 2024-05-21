@@ -91,6 +91,7 @@
                     WidthRequest="100" HeightRequest="40"
                     Stroke="Black"
                     StrokeShape="RoundRectangle 5">
+                
                 <Switch x:Name="underlineSwitch"/>
             </Border>
         </Grid>

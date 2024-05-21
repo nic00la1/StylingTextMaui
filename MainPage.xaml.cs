@@ -41,7 +41,12 @@
                         throw new ArgumentException($"Nieznana opcja: {selectedItem}");
                 }
             }
-            quoteLabel.FontAttributes = (boldSwitch.IsToggled ? FontAttributes.Bold : FontAttributes.None) | (italicSwitch.IsToggled ? FontAttributes.Italic : FontAttributes.None);
+            quoteLabel.FontAttributes = 
+                  (boldSwitch.IsToggled ? FontAttributes.Bold : FontAttributes.None)
+                | (italicSwitch.IsToggled ? FontAttributes.Italic : FontAttributes.None);
+
+            quoteLabel.TextDecorations = 
+                (underlineSwitch.IsToggled ? TextDecorations.Underline : TextDecorations.None);
         }
     }
 
