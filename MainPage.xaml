@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StylingTextMaui.MainPage"
-             BackgroundColor="White">
-
+             BackgroundColor="White"
+             Shell.TitleColor="Snow">
     <ContentPage.Resources>
         <ResourceDictionary>
             <LinearGradientBrush x:Key="GreenGradient" EndPoint="1,0">
@@ -55,10 +55,15 @@
         <Grid ColumnDefinitions="*,*">
             <Label Text="Pogrubiony tekst?"
                    FontSize="18" Margin="20"
-                   TextColor="Black"/>  
-            <Switch x:Name="boldSwitch"
-                    BackgroundColor="Black"
-                    Grid.Column="1"/>
+                   TextColor="Black"/>
+            
+            <Border Grid.Column="1" Background="{StaticResource GreenGradient}"
+                    WidthRequest="100" HeightRequest="40"
+                    Stroke="Black"
+                    StrokeShape="RoundRectangle 5">
+                
+                <Switch x:Name="boldSwitch"/>
+            </Border>
         </Grid>
 
         <Grid ColumnDefinitions="*,*">
@@ -67,9 +72,27 @@
                     Margin="20"
                     TextColor="Black"/>
 
-            <Switch x:Name="italicSwitch"
-                    BackgroundColor="Black"
-                    Grid.Column="1"/>
+            <Border Grid.Column="1" Background="{StaticResource GreenGradient}"
+                    WidthRequest="100" HeightRequest="40"
+                    Stroke="Black"
+                    StrokeShape="RoundRectangle 5">
+                
+                <Switch x:Name="italicSwitch"/>
+            </Border>
+        </Grid>
+
+        <Grid ColumnDefinitions="*,*">
+            <Label Text="Podkreślenie?"
+                    FontSize="18"
+                    Margin="20"
+                    TextColor="Black"/>
+
+            <Border Grid.Column="1" Background="{StaticResource GreenGradient}"
+                    WidthRequest="100" HeightRequest="40"
+                    Stroke="Black"
+                    StrokeShape="RoundRectangle 5">
+                <Switch x:Name="underlineSwitch"/>
+            </Border>
         </Grid>
 
         <Button Text="Zatwierdź ustawienia"
@@ -85,14 +108,13 @@
         <BoxView HeightRequest="2" Color="Green"
                  Margin="20">
             <BoxView.Shadow>
-                <Shadow Brush="Green"/>
+                <Shadow Brush="#558B2F"/>
             </BoxView.Shadow>
         </BoxView>
 
         <Label x:Name="quoteLabel" TextColor="Black" HorizontalOptions="Center">
             <Label.Shadow>
-                <Shadow Brush="Yellow"
-                        Radius="6"/>
+                <Shadow Brush="#558B2F"/>
             </Label.Shadow>
         </Label>
 
