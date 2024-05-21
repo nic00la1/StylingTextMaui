@@ -42,19 +42,25 @@
             </Picker.ItemsSource>
         </Picker>
 
-        <Label Text="Pogrubiony tekst?"
-               FontSize="18" Margin="20"
-               TextColor="Black"/>
-        <Switch x:Name="boldSwitch"
-                BackgroundColor="Black"/>
+        <Grid ColumnDefinitions="*,*">
+            <Label Text="Pogrubiony tekst?"
+                   FontSize="18" Margin="20"
+                   TextColor="Black"/>  
+            <Switch x:Name="boldSwitch"
+                    BackgroundColor="Black"
+                    Grid.Column="1"/>
+        </Grid>
 
-        <Label Text="Kursywa?"
-               FontSize="18"
-               Margin="20"
-               TextColor="Black"/>
-        
-        <Switch x:Name="italicSwitch"
-                BackgroundColor="Black"/>
+        <Grid ColumnDefinitions="*,*">
+            <Label Text="Kursywa?"
+                    FontSize="18"
+                    Margin="20"
+                    TextColor="Black"/>
+
+            <Switch x:Name="italicSwitch"
+                    BackgroundColor="Black"
+                    Grid.Column="1"/>
+        </Grid>
 
         <Button Text="Zatwierdź ustawienia"
                 VerticalOptions="Center"
